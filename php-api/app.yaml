@@ -1,0 +1,17 @@
+runtime: php84
+
+handlers:
+  - url: /(.+\.php)$
+    script: \1
+
+  - url: /.*
+    script: index.php
+
+env_variables:
+  DB_USER: test
+  DB_PASS: test
+  DB_NAME: ecommerce
+  DB_SOCKET: /cloudsql/meta-aura-463810-f3:us-central1:myecommerce
+
+beta_settings:
+  cloud_sql_instances: meta-aura-463810-f3:us-central1:myecommerce

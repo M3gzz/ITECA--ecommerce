@@ -1,5 +1,5 @@
 
-export function SideBar() {
+export function SideBar(props: { changeCategory: (category: string) => void }) {
 
   const sideBarContainer = {
     width: "15rem",
@@ -32,16 +32,21 @@ export function SideBar() {
     textDecoration: "underline",
     color: "white",
     display: "block",
-    margin: "5px"
+    margin: "5px",
+    cursor: "pointer",
   }
+
+
+
   return (
       <div style={sideBarContainer}>
         <div style={sideBarContent}>
           <h2 style={sideBarHeading}>Categories</h2>
           <div style={sideBarLinksContainer}>
-            <a href="/products/household" style={sideBarLink}> Household items</a>
-            <a href="/products/motorVehicles" style={sideBarLink}> Motor Vehicles</a>
-            <a href="/products/electronics" style={sideBarLink}> Electronics</a>
+            <span style={sideBarLink} onClick={() => props.changeCategory('2')}> Household items</span>
+            <span style={sideBarLink} onClick={() => props.changeCategory('3')}> Motor Vehicles</span>
+            <span style={sideBarLink} onClick={() => props.changeCategory('1')}> Electronics</span>
+            <span style={sideBarLink} onClick={() => props.changeCategory('4')}> Clothing</span>
           </div>
         </div>
 
